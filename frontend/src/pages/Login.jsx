@@ -18,80 +18,47 @@ function Login() {
         "https://attendance-management-system-8rhj.onrender.com/api/auth/login",
         {
           email,
-          password
+          password,
         }
       );
 
-      localStorage.setItem(
-        "token",
-        res.data.token
-      );
+      console.log("Login Success:", res.data);
 
-      localStorage.setItem(
-        "role",
-        res.data.role
-      );
-
-      localStorage.setItem(
-        "name",
-        res.data.name
-      );
-
-      localStorage.setItem(
-        "studentId",
-        res.data.id
-      );
-
-      localStorage.setItem(
-        "rollNumber",
-        res.data.rollNumber
-      );
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("role", res.data.role);
+      localStorage.setItem("name", res.data.name);
+      localStorage.setItem("studentId", res.data.id);
+      localStorage.setItem("rollNumber", res.data.rollNumber);
 
       if (res.data.role === "teacher") {
-
         window.location.href = "/teacher";
-
       } else {
-
         window.location.href = "/student";
-
       }
 
     } catch (error) {
 
-      console.log("Full Error:", error);
+      console.log("FULL ERROR:", error);
 
       if (error.response) {
         console.log("Response Data:", error.response.data);
         console.log("Status:", error.response.status);
-
-        alert(
-          error.response.data.message ||
-          error.response.data.error ||
-          "Login Failed"
-        );
-      } else {
-        alert(error.message);
       }
 
+      alert("Login Failed");
     }
-
   };
 
   return (
     <div>
 
-      <h1>
-        Attendance Management System
-      </h1>
+      <h1>Attendance Management System</h1>
 
       <input
         type="email"
         placeholder="Email"
         value={email}
-        onChange={(e) =>
-          setEmail(e.target.value)
-        }
+        onChange={(e) => setEmail(e.target.value)}
       />
 
       <br /><br />
@@ -100,9 +67,7 @@ function Login() {
         type="password"
         placeholder="Password"
         value={password}
-        onChange={(e) =>
-          setPassword(e.target.value)
-        }
+        onChange={(e) => setPassword(e.target.value)}
       />
 
       <br /><br />
