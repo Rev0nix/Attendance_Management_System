@@ -107,7 +107,12 @@ function Login() {
 
       <br /><br />
 
-      <button onClick={loginUser}>
+      <button
+        onClick={() => {
+          alert("Button Working");
+          loginUser();
+        }}
+      >
         Login
       </button>
 
