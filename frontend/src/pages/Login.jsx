@@ -8,6 +8,10 @@ function Login() {
 
   const loginUser = async () => {
 
+    console.log("Login button clicked");
+    console.log("Email:", email);
+    console.log("Password:", password);
+
     try {
 
       const res = await axios.post(
@@ -55,9 +59,20 @@ function Login() {
 
     } catch (error) {
 
-      console.error(error);
+      console.log("Full Error:", error);
 
-      alert("Login Failed");
+      if (error.response) {
+        console.log("Response Data:", error.response.data);
+        console.log("Status:", error.response.status);
+
+        alert(
+          error.response.data.message ||
+          error.response.data.error ||
+          "Login Failed"
+        );
+      } else {
+        alert(error.message);
+      }
 
     }
 
