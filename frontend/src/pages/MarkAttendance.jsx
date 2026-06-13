@@ -10,7 +10,7 @@ function MarkAttendance() {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:5000/api/attendance/mark",
+        "https://attendance-management-system-8rhj.onrender.com/api/attendance/mark",
         {
           studentId,
           status

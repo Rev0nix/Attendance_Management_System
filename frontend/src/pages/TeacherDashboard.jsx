@@ -17,7 +17,7 @@ function TeacherDashboard() {
         localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/attendance/report",
+        "https://attendance-management-system-8rhj.onrender.com/api/attendance/report",
         {
           headers: {
             Authorization: token
@@ -78,7 +78,7 @@ function TeacherDashboard() {
       >
         Attendance Chart
       </button>
-      
+
       <br /><br />
 
       <button

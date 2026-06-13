@@ -8,7 +8,7 @@ function AttendancePercentage() {
   const calculatePercentage = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/attendance/student/${studentId}`
+        `https://attendance-management-system-8rhj.onrender.com/api/attendance/student/${studentId}`
       );
 
       const records = res.data;

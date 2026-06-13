@@ -10,7 +10,7 @@ function ViewAttendance() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        `http://localhost:5000/api/attendance/student/${studentId}`,
+        `https://attendance-management-system-8rhj.onrender.com/api/attendance/student/${studentId}`,
         {
           headers: {
             Authorization: token

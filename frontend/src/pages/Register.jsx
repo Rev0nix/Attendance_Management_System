@@ -13,7 +13,7 @@ function Register() {
     try {
 
       await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://attendance-management-system-8rhj.onrender.com/api/auth/register",
         {
           name,
           rollNumber,
